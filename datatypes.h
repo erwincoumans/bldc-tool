@@ -281,6 +281,9 @@ typedef struct {
 
     // Nunchuk application settings
     chuk_config app_chuk_conf;
+
+    //Custom encoder count
+    quint32 app_custom_encoder_counts;
 } app_configuration;
 
 #endif // DATATYPES_H
