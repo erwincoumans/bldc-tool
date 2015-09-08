@@ -1731,8 +1731,9 @@ void MainWindow::appconfReceived(app_configuration appconf)
     ui->appconfUartBaudBox->setValue(appconf.app_uart_baudrate);
 
      ui->appconfCustomEncoderCountsBox->setValue(appconf.app_custom_encoder_counts);
- 
-   // Nunchuk
+     ui->appconfCustomEncoderPulsesBox->setValue(appconf.app_custom_measured_pulses); 
+   
+	// Nunchuk
     switch (appconf.app_chuk_conf.ctrl_type) {
     case CHUK_CTRL_TYPE_NONE:
         ui->appconfChukDisabledButton->setChecked(true);
@@ -2219,7 +2220,6 @@ void MainWindow::on_appconfWriteButton_clicked()
     }
 
     appconf.app_custom_encoder_counts = ui->appconfCustomEncoderCountsBox->value();
-
     appconf.app_chuk_conf.hyst = ui->appconfChukHystBox->value();
     appconf.app_chuk_conf.rpm_lim_start = ui->appconfChukRpmLimStartBox->value();
     appconf.app_chuk_conf.rpm_lim_end = ui->appconfChukRpmLimEndBox->value();

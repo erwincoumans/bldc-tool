@@ -2660,10 +2660,42 @@ p, li { white-space: pre-wrap; }
                  <item row="0" column="1">
                   <widget class="QSpinBox" name="appconfCustomEncoderCountsBox">
                    <property name="maximum">
-                    <number>20000000</number>
+                    <number>999999</number>
+                   </property>
+                   <property name="minimum">
+                    <number>-999999</number>
+                   </property>
+		               <property name="singleStep">
+                    <number>1</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+	      <item>
+               <widget class="QGroupBox" name="groupBox_21b">
+                <property name="title">
+                 <string>Settings</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_16b">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_46b">
+                   <property name="text">
+                    <string>Measured pulses between indices</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QSpinBox" name="appconfCustomEncoderPulsesBox">
+                   <property name="maximum">
+                    <number>999999</number>
+                   </property>
+                   <property name="minimum">
+                    <number>-999999</number>
                    </property>
                    <property name="singleStep">
-                    <number>2400</number>
+                    <number>1</number>
                    </property>
                   </widget>
                  </item>

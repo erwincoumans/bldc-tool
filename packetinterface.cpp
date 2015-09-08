@@ -510,7 +510,8 @@ void PacketInterface::processPacket(const unsigned char *data, int len)
         appconf.app_chuk_conf.tc = data[ind++];
         appconf.app_chuk_conf.tc_max_diff = utility::buffer_get_double32(data, 1000.0, &ind);
 
-	appconf.app_custom_encoder_counts = utility::buffer_get_uint32(data,&ind);
+	appconf.app_custom_encoder_counts = utility::buffer_get_int32(data,&ind);
+	appconf.app_custom_measured_pulses = utility::buffer_get_int32(data,&ind);
  
        emit appconfReceived(appconf);
         break;
@@ -936,7 +937,8 @@ bool PacketInterface::setAppConf(const app_configuration &appconf)
     mSendBuffer[send_index++] = appconf.app_chuk_conf.tc;
     utility::buffer_append_double32(mSendBuffer, appconf.app_chuk_conf.tc_max_diff, 1000.0, &send_index);
 
-    utility::buffer_append_uint32(mSendBuffer, appconf.app_custom_encoder_counts, &send_index);
+    utility::buffer_append_int32(mSendBuffer, appconf.app_custom_encoder_counts, &send_index);
+    utility::buffer_append_int32(mSendBuffer, appconf.app_custom_encoder_counts, &send_index);
 
     return sendPacket(mSendBuffer, send_index);
 }

@@ -283,7 +283,8 @@ typedef struct {
     chuk_config app_chuk_conf;
 
     //Custom encoder count
-    quint32 app_custom_encoder_counts;
+    qint32 app_custom_encoder_counts;
+    qint32 app_custom_measured_pulses;
 } app_configuration;
 
 #endif // DATATYPES_H
